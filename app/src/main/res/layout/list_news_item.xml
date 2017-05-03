@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2016 The Android Open Source Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<!-- Layout for a single list item that displays an earthquake -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+android:background="@drawable/listui"
+    android:orientation="horizontal"
+         android:paddingBottom="25dp"
+              android:paddingLeft="10dp"
+              android:paddingRight="10dp"
+              android:paddingTop="25dp"
+   >
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="160dp"
+        android:layout_weight="1.9"
+        android:orientation="vertical"
+        >
+<ImageView
+    android:layout_width="match_parent"
+
+    tools:src="@drawable/image_test"
+    android:id="@+id/image"
+    android:layout_height="80dp"
+    android:layout_gravity="center_vertical"
+    android:scaleType="centerCrop"
+    android:layout_marginTop="15dp"
+    android:layout_marginBottom="2dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:contentDescription="@string/app_name"/>
+        <TextView
+            android:id="@+id/source"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#8D6E63"
+            android:layout_margin="4dp"
+            android:textSize="12sp"
+            android:textStyle="italic"/>
+        <TextView
+            android:id="@+id/date"
+            android:textColor="#7CB342"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_margin="5dp"
+        android:layout_weight="4"
+        android:orientation="vertical"
+        android:layout_height="120dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="15dp"
+            android:orientation="horizontal"
+            android:layout_margin="1dp"
+
+            >
+    
+    <TextView
+        android:id="@+id/country_name"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:textSize="14sp"
+
+        android:textColor="#4DB6AC"
+        android:gravity="center_vertical"
+        tools:text="INDddfvvfAAD NEWS |"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+
+        />
+
+                <TextView
+
+                    android:id="@+id/time"
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:textSize="12sp"
+                    android:textColor="#7CB342"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="5dp"
+                    tools:text="6 hours ago"
+                    />
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/headline"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="4dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:textSize="15sp"
+            android:textColor="#000000"
+            tools:text="Trump won american amerocn amedffdfdf Election"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="2dp"
+            android:background="#FFFFFF"
+            />
+        <TextView
+            android:id="@+id/body"
+
+            android:layout_marginRight="4dp"
+            android:layout_marginLeft="4dp"
+            android:padding="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:textSize="13sp"
+            android:layout_gravity="center_vertical"
+android:textColor="#E65100"
+            android:textStyle="italic"
+            tools:text="Ghachar Ghochar is the English-language debut of a writer already established as a leading figure in both the pan-Indian and Kannada-language literary scenes. Once again, reading beyond our tiny borders shows us what we’ve been missing, and proves the necessity of translation for a dynamic literary culture: Ghachar Ghochar is both fascinatingly different from much Indian writing in English, and provides a masterclass in crafting, particularly on the power of leaving things unsaid. In fewer than 28,000 words, Vivek Shanbhag weaves a web of suggestion and implication, to be read with a sense of mounting unease. The opening chapter demonstrates how the short novel is the perfect form for Shanbhag’s particular talents: precise observations, accumulation of detail, narrative progression by way of oblique tangents. It opens in a Bangalore coffee shop, whose name hasn’t changed in a hundred years, andwhere the unnamed narrator unburdens himself to laconic waiter Vincent. The latter is splendidly outfitted in cummerbund and turban, and Coffee House’s tasteful oak-panelled walls are decorated with old photographs showing “just how beautiful this city was a century ago”. The narrator has no reason to be there, he confesses, “but who can admit to doing something for no reason in times like these, in a city as busy as this one?” In a handful of deftly drawn strokes, we learn that Coffee House is his refuge from contemporary life, harking back as it does to a time before the bourgeois concerns of money-making had taken root. Vincent features prominently in the opening chapter, only to fade into the background; the same goes for the narrator’s former lover Chitra, who worked for a women’s welfare organisation. Her accounts of domestic abuse arouse a curious response: “I knew that tea shouldn’t lead to a broken arm, or a forgotten key to murder. It wasn’t about the tea or the key: the last strands of a relationship can snap from a single glance or a moment of silence.” And there it is, the telltale hint that all is not well; far less obtrusive than Chekhov’s gun, but equally ominous. We pass from one enclosed interior space to another: the family home, where the narrator lives with his older sister Malati, his wife Anita, his parents and his father’s younger brother or “Chikkappa”, whose successful spice company has raised the family into middle-class comfort. Chikkappa, and by extension the money he brings in, are now the centre around which the rest of the family orbits, eagerly catering to his every whim. Each relative is introduced with a reference to their financial contributions, a bit like Jane Austen’s eligible bachelors being ranked by income, but while Shanbhag’s observations are as meticulous and true to life as Austen’s, and notwithstanding his wry wit, something far darker is going on here. Chikkappa’s success, the narrator tells us, has delivered them from the early days “when the whole family stuck together, walking like a single body across the tightrope of our circumstances”, but blood is still thicker than water: the family responds with unwarranted violence when “thrown off balance” (a repeated phrase) by an unknown woman turning up at their door, claiming a connection with Chikkappa. In the ensuing showdown, Anita’s failure to demonstrate unquestioning solidarity is the first sign that everything is soon to become “ghachar ghochar”, nonsense words invented by Shanbhag to denote something irrevocably entangled. The overriding impression produced by this focus on interiors and the close-knit family unit is one of claustrophobia. Every attempt to establish a relationship outside of this immediate group ultimately ends in failure, as when Malati divorces her husband and returns to the family home. And then there are the ants: foreign bodies invading their space, disrupting their stiflingly organised world, and in whose destruction the family take growing pleasure. Srinath Perur’s excellent translation presents a wonderfully measured, sometimes mannered diction, using words such as “compunction” and phrasing such as “took to creating a moat around the food”, as opposed to the more obvious, less stately “would create”, “created” or even just “made”. Having first encountered the book in its HarperCollins India edition, I was excited to hear of it being published by Faber – which is to be praised for retaining that foreign-sounding title and for stamping Srinath’s name on the cover – and surprised not to see it on the Man Booker international longlist. Such prizes can be invaluable in getting attention for international writing, especially from little-represented languages such as Kannada, but there is no doubt that this deceptively unassuming book will find its readership. • Deborah Smith is the translator of Han Kang’s The Vegetarian. Ghachar Ghochar is published by Faber. To order a copy go to bookshop.theguardian.com or call 0330 333 6846. Free UK p&amp;amp;p over £10, online orders only. Phone orders min p&amp;amp;p of £1.99."
+            />
+    </LinearLayout>
+</LinearLayout>

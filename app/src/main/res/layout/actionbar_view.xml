@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<AutoCompleteTextView xmlns:android="http://schemas.android.com/apk/res/android"
+
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:inputType="textFilter"
+          android:background="#FFFFFF"
+          android:textColor="#01579B"
+          android:textSize="14sp"
+          android:layout_margin="5dp"
+          android:hint="@string/hint"
+          android:id="@+id/autocomplete_country">
+
+</AutoCompleteTextView>
