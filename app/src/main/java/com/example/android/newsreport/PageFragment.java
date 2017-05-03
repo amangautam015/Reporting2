@@ -29,13 +29,13 @@ import java.util.List;
  * A simple {@link Fragment} subclass.
  */
 public class PageFragment extends Fragment implements OnRefreshListener,LoaderCallbacks<List<News>> {
-public String URL_REQUEST;
+    public String URL_REQUEST;
     public int flag;
     public String ty;
 
     public  ImageButton ib;
     public String u="ignoreKeywords=&keywords=";
-   public   String URL_REQUEST1 ;// "http://eventregistry.org/json/article?categoryUri=dmoz%2FNews&ignoreKeywords=&keywords=India&lang=eng&action=getArticles&articlesSortBy=date&resultType=articles&articlesIncludeArticleCategories=true&articlesIncludeArticleLocation=true&articlesIncludeArticleImage=true&articlesIncludeConceptSynonyms=true&articlesIncludeConceptImage=true&articlesIncludeConceptDescription=true&articlesIncludeConceptDetails=true&articlesIncludeConceptTrendingScore=true&articlesIncludeSourceDescription=true&articlesIncludeSourceLocation=true&articlesIncludeSourceImportance=true&articlesIncludeSourceDetails=true&callback=JSON_CALLBACK";
+    public   String URL_REQUEST1 ;// "http://eventregistry.org/json/article?categoryUri=dmoz%2FNews&ignoreKeywords=&keywords=India&lang=eng&action=getArticles&articlesSortBy=date&resultType=articles&articlesIncludeArticleCategories=true&articlesIncludeArticleLocation=true&articlesIncludeArticleImage=true&articlesIncludeConceptSynonyms=true&articlesIncludeConceptImage=true&articlesIncludeConceptDescription=true&articlesIncludeConceptDetails=true&articlesIncludeConceptTrendingScore=true&articlesIncludeSourceDescription=true&articlesIncludeSourceLocation=true&articlesIncludeSourceImportance=true&articlesIncludeSourceDetails=true&callback=JSON_CALLBACK";
     private static final int NEWS_LOADER_ID = 1;
     private static final int COUNTRY_LOADER_ID=2;
     private NewsAdapter mAdapter;
@@ -47,7 +47,7 @@ public String URL_REQUEST;
     }
     public static final String MESSAGE = "MESSAGE";
     public static final String ARG_PAGE = "ARG_PAGE";
-public static final String EXTRA_MESSAGE = "EXTRA_MESSAGE";
+    public static final String EXTRA_MESSAGE = "EXTRA_MESSAGE";
 
     private int mPage;
 
@@ -55,7 +55,7 @@ public static final String EXTRA_MESSAGE = "EXTRA_MESSAGE";
         Bundle args = new Bundle();
         args.putInt(ARG_PAGE, page);
         args.putString(EXTRA_MESSAGE,k);
-  args.putInt(MESSAGE,m);
+        args.putInt(MESSAGE,m);
         PageFragment fragment = new PageFragment();
         fragment.setArguments(args);
         return fragment;
@@ -83,7 +83,7 @@ public static final String EXTRA_MESSAGE = "EXTRA_MESSAGE";
         swipeLayout.setOnRefreshListener(this);
         swipeLayout.setColorSchemeResources(R.color.orange, R.color.blue, R.color.green);
 
-ib=(ImageButton)rootView.findViewById(R.id.buttonc);
+        ib=(ImageButton)rootView.findViewById(R.id.buttonc);
 
         mEmptyStateTextView = (TextView) rootView.findViewById(R.id.empty_view);
         newsListView.setEmptyView(mEmptyStateTextView);
@@ -124,21 +124,22 @@ ib=(ImageButton)rootView.findViewById(R.id.buttonc);
 
         }
         ib = (ImageButton) rootView.findViewById(R.id.buttonc);
-ib.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-        dowork();
-    }
-});
+        ib.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dowork();
+                loadingIndicator.setVisibility(View.GONE);
+            }
+        });
         // loadingIndicator = rootView.findViewById(R.id.loading_indicator);
         return rootView;
     }
 
     @Override
     public android.support.v4.content.Loader<List<News>> onCreateLoader(int id, Bundle args) {
-       SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
+        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
         String ty  = sharedPrefs.getString(getString(R.string.settings_key),getString(R.string.settings_default));
-      //  URL_REQUEST = URL_REQUEST1.replaceAll(u+"International",u+ty);
+        //  URL_REQUEST = URL_REQUEST1.replaceAll(u+"International",u+ty);
         return new NewsLoader(flag,getActivity(),URL_REQUEST1,ty);
     }
 
@@ -149,7 +150,7 @@ ib.setOnClickListener(new View.OnClickListener() {
         swipeLayout.setRefreshing(false);
         // Set empty state text to display "No news found."
 
-            mEmptyStateTextView.setText("No new update OR Slow internet");
+        mEmptyStateTextView.setText("No new update OR Slow internet");
 
         // Clear the adapter of previous earthquake data
         mAdapter.clear();
@@ -176,22 +177,27 @@ ib.setOnClickListener(new View.OnClickListener() {
         PageFragment.newInstance(flag,mPage,URL_REQUEST);
         mEmptyStateTextView.setText("");
         getLoaderManager().initLoader(NEWS_LOADER_ID,null, this);
-       // Intent intent = new Intent(getActivity(), PageFragment.class);
+        // Intent intent = new Intent(getActivity(), PageFragment.class);
         //swipeLayout.setRefreshing(false);
         //startActivity(intent);
     }
     public void dowork(){
-        flag=1; loadingIndicator.setVisibility(View.VISIBLE);
-      //  getLoaderManager().destroyLoader(NEWS_LOADER_ID);
+        flag=1; loadingIndicator.setVisibility(View.VISIBLE);  swipeLayout.setRefreshing(false);
+        //  getLoaderManager().destroyLoader(NEWS_LOADER_ID);
         //mEmptyStateTextView.setText("");
         //PageFragment.newInstance(flag,mPage,URL_REQUEST);
         //mEmptyStateTextView.setText("");
         //getLoaderManager().initLoader(NEWS_LOADER_ID,null, this);
-        Intent intent = new Intent(getActivity(), MainActivity.class);
+        //
+
         Bundle b= new Bundle();
         b.putInt("k",flag);
-        swipeLayout.setRefreshing(false);
+        Intent intent = new Intent(getActivity(), MainActivity.class);
+
+        intent.putExtras(b);
+
         startActivity(intent);
+
     }
 /*public void message(View view){
     flag=1;

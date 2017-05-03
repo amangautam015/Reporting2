@@ -20,7 +20,7 @@ public int ff;
         Bundle b = getIntent().getExtras();
         int value ; // or other values
         if(b!=null){
-            value = b.getInt("key");}
+            value = b.getInt("k");}
         else {value=0;}
         ff=value;
 //String Source ;
