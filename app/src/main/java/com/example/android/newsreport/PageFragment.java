@@ -181,7 +181,7 @@ ib.setOnClickListener(new View.OnClickListener() {
         //startActivity(intent);
     }
     public void dowork(){
-        flag=1;
+        flag=1; loadingIndicator.setVisibility(View.VISIBLE);
         getLoaderManager().destroyLoader(NEWS_LOADER_ID);
         mEmptyStateTextView.setText("");
         PageFragment.newInstance(flag,mPage,URL_REQUEST);
