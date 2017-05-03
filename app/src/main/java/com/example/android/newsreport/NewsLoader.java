@@ -17,7 +17,7 @@ public class NewsLoader extends AsyncTaskLoader<List<News>> {
 public int flag;
     /** Tag for log messages */
     private static final String LOG_TAG = NewsLoader.class.getName();
-
+    public String u="ignoreKeywords=&keywords=";
     /** Query URL */
     private String mUrl;
 private String mCountry;
@@ -50,12 +50,16 @@ private String mCountry;
 
         // Perform the network request, parse the response, and extract a list of Newss.
         if(flag==0){
-        List<News> Newss = Utils.fetchNewsData(mUrl,mCountry);
-        return Newss;
+            String k;
+            k = mUrl.replaceAll(u+"International",u+mCountry);
+            List<News> Newss = Utils.fetchNewsData(k,mCountry);
+            return Newss;
     }
 else {
             String cc= Utils1.fetchcountryData("http://ip-api.com/json");
-            List<News> Newss = Utils.fetchNewsData(mUrl,cc);
+            String k;
+            k = mUrl.replaceAll(u+"International",u+cc);
+            List<News> Newss = Utils.fetchNewsData(k,cc);
             return Newss;
 
         }
