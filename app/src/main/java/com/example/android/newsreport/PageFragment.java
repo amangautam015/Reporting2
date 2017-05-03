@@ -182,12 +182,16 @@ ib.setOnClickListener(new View.OnClickListener() {
     }
     public void dowork(){
         flag=1; loadingIndicator.setVisibility(View.VISIBLE);
-        getLoaderManager().destroyLoader(NEWS_LOADER_ID);
-        mEmptyStateTextView.setText("");
-        PageFragment.newInstance(flag,mPage,URL_REQUEST);
-        mEmptyStateTextView.setText("");
-        getLoaderManager().initLoader(NEWS_LOADER_ID,null, this);
-
+      //  getLoaderManager().destroyLoader(NEWS_LOADER_ID);
+        //mEmptyStateTextView.setText("");
+        //PageFragment.newInstance(flag,mPage,URL_REQUEST);
+        //mEmptyStateTextView.setText("");
+        //getLoaderManager().initLoader(NEWS_LOADER_ID,null, this);
+        Intent intent = new Intent(getActivity(), MainActivity.class);
+        Bundle b= new Bundle();
+        b.putInt("k",flag);
+        swipeLayout.setRefreshing(false);
+        startActivity(intent);
     }
 /*public void message(View view){
     flag=1;

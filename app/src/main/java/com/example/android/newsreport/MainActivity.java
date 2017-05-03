@@ -9,10 +9,20 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
+public int ff;
+    public MainActivity(int f){
 
+        ff=f;
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Bundle b = getIntent().getExtras();
+        int value ; // or other values
+        if(b!=null){
+            value = b.getInt("key");}
+        else {value=0;}
+        ff=value;
 //String Source ;
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.word_list);
@@ -35,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         //}
 
         // Create an adapter that knows which fragment should be shown on each page
-        CatogeryAdapter adapter = new CatogeryAdapter(MainActivity.this,getSupportFragmentManager());
+        CatogeryAdapter adapter = new CatogeryAdapter(ff,MainActivity.this,getSupportFragmentManager());
 
         // Set the adapter onto the view pager
       //  viewPager.setAdapter(adapter);
