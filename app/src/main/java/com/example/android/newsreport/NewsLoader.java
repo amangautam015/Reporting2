@@ -52,6 +52,7 @@ private String mCountry;
         if(flag==0){
             String k;
             String i;
+            mCountry=mCountry.trim();
             i=mCountry.replaceAll("\\s","%20");
             k = mUrl.replaceAll(u+"International",u+i);
             List<News> Newss = Utils.fetchNewsData(k,mCountry);
@@ -61,6 +62,7 @@ private String mCountry;
             String cc= Utils1.fetchcountryData("http://ip-api.com/json");
             String k;
             String i;
+            cc=cc.trim();
             i=cc.replaceAll("\\s","%20");
             // k = mUrl.replaceAll(u+"International",u+i);
             k = mUrl.replaceAll(u+"International",u+i);
