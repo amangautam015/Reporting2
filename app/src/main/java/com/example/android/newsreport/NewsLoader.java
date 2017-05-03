@@ -51,14 +51,19 @@ private String mCountry;
         // Perform the network request, parse the response, and extract a list of Newss.
         if(flag==0){
             String k;
-            k = mUrl.replaceAll(u+"International",u+mCountry);
+            String i;
+            i=mCountry.replaceAll("\\s","%20");
+            k = mUrl.replaceAll(u+"International",u+i);
             List<News> Newss = Utils.fetchNewsData(k,mCountry);
             return Newss;
-    }
-else {
+        }
+        else {
             String cc= Utils1.fetchcountryData("http://ip-api.com/json");
             String k;
-            k = mUrl.replaceAll(u+"International",u+cc);
+            String i;
+            i=cc.replaceAll("\\s","%20");
+            // k = mUrl.replaceAll(u+"International",u+i);
+            k = mUrl.replaceAll(u+"International",u+i);
             List<News> Newss = Utils.fetchNewsData(k,cc);
             return Newss;
 
