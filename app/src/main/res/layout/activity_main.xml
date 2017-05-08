@@ -47,18 +47,12 @@ android:background="#0288D1"
         android:layout_margin="20dp"
         android:layout_centerHorizontal="true" />
 
-    <ImageButton
-        android:background="@color/colorPrimary"
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/buttonc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_margin="10dp"
-        android:onClick="method"
-        android:visibility="visible"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:id="@+id/buttonc"
-        android:src="@mipmap/ic_launcher"
-        />
+        android:layout_alignParentRight="true"
+        android:layout_margin="20dp"
+        android:src="@mipmap/ic_launcher"/>
 </RelativeLayout>

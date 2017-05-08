@@ -10,10 +10,10 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
 public int ff;
-    public MainActivity(int f){
+  /*  public MainActivity(int f){
 
         ff=f;
-    }
+    } */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
