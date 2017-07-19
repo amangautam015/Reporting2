@@ -13,5 +13,7 @@ Still Want to Implement
 
 Bugs
 >Floating Action button not visible in KitKat and lower version.Solved in last commit on 08-05-2017
+
 >Last UI update App crashes when auto-locate button is clicked
+
 *This app is made for completely non-profit and for  learning purpose no official registration done on EventRegistry.org.
